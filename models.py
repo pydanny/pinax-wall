@@ -1,15 +1,21 @@
 """ Sample model for group aware projects """
 
+import datetime
+
 from django.db import models
 
+from django.contrib.auth.models import User
 from django.contrib.contenttypes import generic
 from django.contrib.contenttypes.models import ContentType
+from django.utils.translation import ugettext_lazy as _
 
 
 class Post(models.Model):
 
     # Sample text fields below
     title = models.CharField(max_length=140)
+    creator = models.ForeignKey(User, verbose_name=_('creator'), related_name="%(class)s_created")
+    created = models.DateTimeField(_('created'), default=datetime.datetime.now)    
         
     # The following three fields are required for being group aware
     object_id = models.IntegerField(null=True)
