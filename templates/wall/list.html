@@ -2,11 +2,17 @@
 
 {% load i18n %}
 {% load pagination_tags %}
+{% load uni_form %}
 
 {% block head_title %}{% blocktrans %}Wall{% endblocktrans %}{% endblock %}
 
 {% block body %}
     <h1>{% trans "Wall" %}</h1>
+    
+    {% with form.helper as helper %}
+        {% uni_form form helper %}
+    {% endwith %}
+    
     
     {% autopaginate posts 10 %}
     {% if posts %}
@@ -20,4 +26,18 @@
         <p>There are no posts yet.</p>
     {% endif %}
     
+{% endblock %}
+
+
+{% block extra_body %}
+	<script type="text/javascript">
+	
+    	$().ready(function() {
+    	    
+    	    // profile form handler things
+            $('#id_title').focus();
+
+    	});
+	</script>   
+    	    
 {% endblock %}
