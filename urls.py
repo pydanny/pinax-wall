@@ -11,7 +11,7 @@ urlpatterns = patterns("",
 )
 
 
-# stick this into your groups/tribes urls.py:
+# stick this into your groups/dances urls.py:
 
-urlpatterns += bridge.include_urls('sample_group_aware_app.urls',
-                r'^tribe/(?P<group_slug>[-\w]+)/samples/')
+#urlpatterns += bridge.include_urls('sample_group_aware_app.urls',
+#                r'^dance/(?P<group_slug>[-\w]+)/samples/')
