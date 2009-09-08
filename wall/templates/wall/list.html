@@ -1,0 +1,47 @@
+{% extends "wall/base.html" %}
+
+{% load i18n %}
+{% load pagination_tags %}
+{% load uni_form %}
+
+{% block head_title %}{% blocktrans %}Wall{% endblocktrans %}{% endblock %}
+
+{% block body %}
+    <h1>Wall
+        {% if group %}
+            for {{ group }}
+        {% endif %}
+    </h1>
+    
+    {% with form.helper as helper %}
+        {% uni_form form helper %}
+    {% endwith %}
+    
+    
+    {% autopaginate posts 10 %}
+    {% if posts %}
+        <ul>
+        {% for post in posts %}
+            <li><strong>{{ post.created }} {{post.creator}}</strong> {{ post.title|safe }}</li>
+        {% endfor %}
+        </ul>
+        {% paginate %}
+    {% else %}
+        <p>There are no posts yet.</p>
+    {% endif %}
+    
+{% endblock %}
+
+
+{% block extra_body %}
+	<script type="text/javascript">
+	
+    	$().ready(function() {
+    	    
+    	    // profile form handler things
+            $('#id_title').focus();
+
+    	});
+	</script>   
+    	    
+{% endblock %}
