@@ -1,6 +1,6 @@
 from setuptools import setup, find_packages
  
-version = '0.1.0'
+version = '0.1.1'
  
 LONG_DESCRIPTION = """
 =====================================
@@ -11,7 +11,7 @@ Pinax wall lets you do a facebook/twitter style community status system
 """
  
 setup(
-    name='django-pinax',
+    name='pinax-wall',
     version=version,
     description="Pinax wall lets you do a facebook/twitter style community status system",
     long_description=LONG_DESCRIPTION,
