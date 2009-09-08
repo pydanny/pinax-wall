@@ -21,7 +21,7 @@ setup(
         "Framework :: Django",
         "Environment :: Web Environment",
     ],
-    keywords='wall,django',
+    keywords='wall,django,pinax',
     author='Daniel Greenfeld',
     author_email='pydanny@gmail.com',
     url='http://github.com/pydanny/pinax-wall/tree/master',
