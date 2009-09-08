@@ -2,8 +2,6 @@
 
 from django.conf.urls.defaults import *
 
-from wall.models import post
-
 urlpatterns = patterns("",
     url(r'^create/$', 'wall.views.add', name="wall_add"),
     url(r"^$", "wall.views.list", name="wall_list"),
