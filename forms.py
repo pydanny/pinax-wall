@@ -9,7 +9,7 @@ class WallForm(forms.ModelForm):
     """Form for adding a new wall post
     """
     
-    title = forms.CharField(widget=forms.Textarea)
+    title = forms.CharField(widget=forms.Textarea())
     
     # Attach a formHelper to your forms class.
     helper = FormHelper()

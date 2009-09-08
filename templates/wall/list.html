@@ -7,7 +7,11 @@
 {% block head_title %}{% blocktrans %}Wall{% endblocktrans %}{% endblock %}
 
 {% block body %}
-    <h1>{% trans "Wall" %}</h1>
+    <h1>Wall
+        {% if group %}
+            for {{ group }}
+        {% endif %}
+    </h1>
     
     {% with form.helper as helper %}
         {% uni_form form helper %}
@@ -18,7 +22,7 @@
     {% if posts %}
         <ul>
         {% for post in posts %}
-            <li><strong>{{ post.created }} {{post.creator}}</strong> {{ post.title }}</li>
+            <li><strong>{{ post.created }} {{post.creator}}</strong> {{ post.title|safe }}</li>
         {% endfor %}
         </ul>
         {% paginate %}
