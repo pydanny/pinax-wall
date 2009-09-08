@@ -9,7 +9,7 @@ from django.contrib.contenttypes.models import ContentType
 class Post(models.Model):
 
     # Sample text fields below
-    title = models.CharField(max_length=140)
+    text = models.TextField()
         
     # The following three fields are required for being group aware
     object_id = models.IntegerField(null=True)

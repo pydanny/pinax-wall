@@ -18,7 +18,7 @@ class WallForm(forms.ModelForm):
     
     class Meta:
         model = Post
-        fields = ('title')
+        fields = ('text')
     
     def clean(self):
         self.check_group_membership()
