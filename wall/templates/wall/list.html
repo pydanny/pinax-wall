@@ -13,9 +13,11 @@
         {% endif %}
     </h1>
     
-    {% with form.helper as helper %}
-        {% uni_form form helper %}
-    {% endwith %}
+    {% if form %}
+        {% with form.helper as helper %}
+            {% uni_form form helper %}
+        {% endwith %}
+    {% endif %}
     
     
     {% autopaginate posts 10 %}
